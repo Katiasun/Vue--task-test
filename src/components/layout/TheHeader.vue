@@ -65,8 +65,10 @@
             />
           </svg>
         </button>
+        <CircleFlags country="gb" size="small" class="mr-2 cursor-pointer" />
+
         <BaseButton theme="secondary" class="hidden md:block mr-2">Sign In</BaseButton>
-        <BaseButton theme="primary" class="hidden md:block">Sign Up</BaseButton>
+        <BaseButton theme="primary" class="hidden md:block mr-2">Sign Up</BaseButton>
       </div>
     </div>
   </header>
