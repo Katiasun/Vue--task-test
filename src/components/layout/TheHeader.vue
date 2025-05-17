@@ -2,10 +2,9 @@
   <header class="bg-black text-white py-4">
     <div class="container mx-auto flex items-center">
       <button
-        @click="toggleMenu"
-        :aria-pressed="isMenuOpen.toString()"
+        @click="openSideMenu"
+        :aria-pressed="isMenuOpen ? 'true' : 'false'"
         class="group inline-flex w-12 h-12 text-slate-800 text-center items-center justify-center rounded shadow-[0_1px_0_theme(colors.slate.950/.04),0_1px_2px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_4px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] transition"
-        onclick="this.setAttribute('aria-pressed', !(this.getAttribute('aria-pressed') === 'true'))"
       >
         <span class="sr-only">Menu</span>
         <svg
@@ -71,6 +70,7 @@
         <BaseButton theme="primary" class="hidden md:block mr-2">Sign Up</BaseButton>
       </div>
     </div>
+    <TheSideMenu :isOpen="isMenuOpen" @close="closeSideMenu" />
   </header>
 </template>
 
@@ -78,10 +78,15 @@
 import { ref } from 'vue'
 import BaseLink from '../base/BaseLink.vue'
 import BaseButton from '../base/BaseButton.vue'
+import TheSideMenu from './TheSideMenu.vue'
 
 const isMenuOpen = ref(false)
 
-const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value
+function openSideMenu() {
+  isMenuOpen.value = true
+}
+
+function closeSideMenu() {
+  isMenuOpen.value = false
 }
 </script>
