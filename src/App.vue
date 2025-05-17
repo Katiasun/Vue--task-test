@@ -1,3 +1,8 @@
-<script setup></script>
+<script setup>
+import TheHeader from './components/layout/TheHeader.vue'
+</script>
+;
 
-<!-- <template></template> -->
+<template>
+  <TheHeader />
+</template>
