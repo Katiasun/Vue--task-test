@@ -27,7 +27,7 @@
       </nav>
 
       <div class="flex-grow flex justify-center">
-        <img src="../../imgs/logo.jpg" alt="mega rich Logo" class="w-[130px] h-[110px] mr-4" />
+        <img src="" alt="mega rich Logo" class="width: 30px; height: 50px" />
       </div>
 
       <div class="flex items-center">
