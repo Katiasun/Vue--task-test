@@ -8,19 +8,12 @@
       >
         &times;
       </button>
-      <nav class="mt-16 px-4">
-        <ul class="space-y-4">
-          <li><a href="/" class="text-lg text-yellow-500 hover:text-yellow-600">Home</a></li>
-          <li><a href="/about" class="text-lg text-yellow-500 hover:text-yellow-600">About</a></li>
-          <li>
-            <a href="/contact" class="text-lg text-yellow-500 hover:text-yellow-600">Contact</a>
-          </li>
-        </ul>
+      <nav class="mt-16 px-4 space-y-4">
+        <ul class="space-y-4"></ul>
       </nav>
 
       <div class="absolute bottom-4 left-0 w-full px-4">
         <div class="flex flex-col space-y-2">
-          <!-- Live Chat Button -->
           <button
             class="flex items-center justify-center space-x-2 bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded transition duration-300 ease-in-out"
           >
@@ -43,9 +36,8 @@
 
           <!-- English Button -->
           <button
-            class="flex items-center justify-center space-x-2 bg-black text-white border border-red-500 px-4 py-2 rounded transition duration-300 ease-in-out"
+            class="flex justify-center items-center bg-black space-x-2 border border-red-500 py-2 px-4 rounded transition duration-300 ease-in-out"
           >
-            <span class="font-bold text-yellow-500">English</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -54,6 +46,7 @@
             >
               <path d="M4 2h2v20H4V2zm2 0h14l-3 5 3 5H6V2z" />
             </svg>
+            <span class="font-bold text-yellow-500">English</span>
           </button>
         </div>
       </div>
