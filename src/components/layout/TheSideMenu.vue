@@ -9,7 +9,15 @@
         &times;
       </button>
       <nav class="mt-16 px-4 space-y-4">
-        <ul class="space-y-4"></ul>
+        <ul class="space-y-4">
+          <template v-for="(item, index) in menuItems" :key="index">
+            <li v-if="!item.divider" class="flex items-center space-x-2 cursor-pointer">
+              <component :is="iconComponents[item.icon]" class="w-6 h-6 text-yellow-500" />
+              <span class="text-yellow-500">{{ item.label }}</span>
+            </li>
+            <hr v-else class="border-gray-600 my-2" />
+          </template>
+        </ul>
       </nav>
 
       <div class="absolute bottom-4 left-0 w-full px-4">
@@ -56,6 +64,7 @@
 
 <script setup>
 import { watch, defineEmits, defineProps } from 'vue'
+import { menuItems, iconComponents } from '../../menuItems.js'
 
 const props = defineProps({
   isOpen: {
