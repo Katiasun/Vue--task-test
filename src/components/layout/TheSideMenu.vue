@@ -17,6 +17,46 @@
           </li>
         </ul>
       </nav>
+
+      <div class="absolute bottom-4 left-0 w-full px-4">
+        <div class="flex flex-col space-y-2">
+          <!-- Live Chat Button -->
+          <button
+            class="flex items-center justify-center space-x-2 bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded transition duration-300 ease-in-out"
+          >
+            <span class="font-bold text-white">Live Chat</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.985 9.985 0 01-4.9-1.3L3 21l1.3-4.9A9.985 9.985 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+              />
+            </svg>
+          </button>
+
+          <!-- English Button -->
+          <button
+            class="flex items-center justify-center space-x-2 bg-black text-white border border-red-500 px-4 py-2 rounded transition duration-300 ease-in-out"
+          >
+            <span class="font-bold text-yellow-500">English</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M4 2h2v20H4V2zm2 0h14l-3 5 3 5H6V2z" />
+            </svg>
+          </button>
+        </div>
+      </div>
     </aside>
   </transition>
 </template>
