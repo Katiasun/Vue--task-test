@@ -28,10 +28,24 @@
       class="mySwiper"
     >
       <SwiperSlide v-for="(slide, index) in slides" :key="index">
-        <div class="slide-content" :style="{ backgroundImage: `url(${slide.image})` }">
+        <div
+          class="slide-content group relative"
+          :style="{ backgroundImage: `url(${slide.image})` }"
+        >
+          <div class="absolute bottom-2 right-4 z-5">
+            <HeartIcon class="h-6 w-6 text-red-500" />
+          </div>
           <div class="text-overlay">
             <h2>{{ slide.title }}</h2>
             <p>{{ slide.description }}</p>
+          </div>
+          <div
+            class="absolute top-0 left-0 w-full h-full z-15 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"
+          ></div>
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <BaseButton theme="primary">Play Now</BaseButton>
           </div>
         </div>
       </SwiperSlide>
@@ -49,6 +63,7 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import BaseButton from '../base/BaseButton.vue'
 import { useRouter } from 'vue-router'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/20/solid'
+import { HeartIcon } from '@heroicons/vue/24/solid' // Або 'solid', 'mini'
 
 const swiperRef = ref(null)
 const router = useRouter()
