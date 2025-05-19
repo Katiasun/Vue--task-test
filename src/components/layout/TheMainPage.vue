@@ -5,7 +5,7 @@
         <ChevronLeftIcon class="swiper-button-next custom-prev" />
         <ChevronRightIcon class="swiper-button-prev custom-next" />
       </div>
-      <BaseButton theme="tertiary" @click="router.push('/games')">See All</BaseButton>
+      <BaseButton theme="tertiary" @click="goToGames">See All</BaseButton>
     </div>
 
     <Swiper
@@ -53,6 +53,9 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/20/solid'
 const swiperRef = ref(null)
 const router = useRouter()
 
+const goToGames = () => {
+  router.push('/games')
+}
 onMounted(() => {
   if (swiperRef.value && swiperRef.value.swiper) {
     swiperRef.value.swiper.params.navigation.prevEl = '.custom-prev'

@@ -1,12 +1,11 @@
 import './assets/main.css'
-
+import App from './App.vue'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import router from './router'
+import CircleFlags from 'vue-circle-flags'
 import CountryFlag from 'vue-country-flag-next'
 import 'vue-circle-flags/dist/vue-circle-flags.css'
-import CircleFlags from 'vue-circle-flags'
-import App from './App.vue'
 
 const app = createApp(App)
 

@@ -1,9 +1,15 @@
 <template>
-  <button :class="buttonClass" v-bind="$attrs"><slot /></button>
+  <button :class="buttonClass" v-bind="$attrs" @click="handleClick"><slot /></button>
 </template>
 
 <script setup>
-import { defineProps, computed } from 'vue'
+import { defineProps, computed, defineEmits } from 'vue'
+
+const emit = defineEmits(['click'])
+
+const handleClick = (event) => {
+  emit('click', event)
+}
 
 const props = defineProps({
   theme: {
