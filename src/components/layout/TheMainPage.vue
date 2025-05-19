@@ -11,7 +11,7 @@
     <Swiper
       ref="swiperRef"
       :modules="[Navigation, Pagination, Autoplay]"
-      :pagination="{ clickable: true }"
+      :pagination="false"
       :loop="true"
       :autoplay="{ delay: 3000 }"
       :slides-per-view="3.5"
