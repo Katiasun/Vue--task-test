@@ -44,7 +44,11 @@
       </nav>
 
       <div class="flex-grow flex justify-center">
-        <img src="" alt="mega rich Logo" class="width: 30px; height: 50px" />
+        <img
+          src="../../imgs//logo.jpg"
+          alt="mega rich Logo"
+          class="h-10 w-auto sm:h-12 md:h-14 lg:h-16 object-contain rounded-full"
+        />
       </div>
 
       <div class="flex items-center">
@@ -90,3 +94,5 @@ function closeSideMenu() {
   isMenuOpen.value = false
 }
 </script>
+
+<style scoped></style>
