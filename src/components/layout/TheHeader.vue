@@ -36,7 +36,7 @@
         </svg>
       </button>
 
-      <nav :class="['md:flex space-x-4 ml-4', isMenuOpen ? 'block' : 'hidden']">
+      <nav :class="['md:flex space-x-4 ml-4', isMenuOpen ? 'hidden md:block' : 'hidden md:block']">
         <BaseLink to="/">Games</BaseLink>
         <BaseLink to="/sports">Sports</BaseLink>
         <BaseLink to="/promotion">Promotion</BaseLink>
