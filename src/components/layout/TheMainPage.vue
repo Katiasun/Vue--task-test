@@ -1,5 +1,5 @@
 <template>
-  <section class="main-page">
+  <main class="main-page">
     <div class="swiper-controls">
       <div class="swiper-arrows">
         <ChevronLeftIcon class="swiper-button-next custom-prev" />
@@ -50,7 +50,7 @@
         </div>
       </SwiperSlide>
     </Swiper>
-  </section>
+  </main>
 </template>
 
 <script setup>
