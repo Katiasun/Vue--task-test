@@ -15,5 +15,6 @@ export default {
   background: black;
   color: rgb(218, 188, 89);
   padding: 20px;
+  height: calc(100vh - 96px);
 }
 </style>

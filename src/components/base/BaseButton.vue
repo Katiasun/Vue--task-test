@@ -1,5 +1,12 @@
 <template>
-  <button :class="buttonClass" v-bind="$attrs" @click="handleClick"><slot /></button>
+  <button
+    class="transition-colors duration-200"
+    :class="buttonClass"
+    v-bind="$attrs"
+    @click="handleClick"
+  >
+    <slot />
+  </button>
 </template>
 
 <script setup>
@@ -19,16 +26,11 @@ const props = defineProps({
   },
 })
 
-const buttonClass = computed(() => {
-  return {
-    'bg-red-500 text-white': props.theme === 'primary',
-    'bg-yellow-500 text-white': props.theme === 'secondary',
-    'border border-yellow-500 rounded-10 text-yellow-500 font-bold': props.theme === 'tertiary',
-    'py-2 px-4 rounded': true,
-    'hover:bg-red-600': props.theme === 'primary',
-    'hover:bg-yellow-600 ': props.theme === 'secondary',
-    'hover:bg-gray-600': props.theme === 'tertiary',
-    'transition-colors duration-200': true,
-  }
-})
+const buttonThemes = {
+  primary: 'bg-red-500 text-white hover:bg-red-600',
+  secondary: 'bg-yellow-500 text-white hover:bg-yellow-600',
+  tertiary: 'border border-yellow-500 rounded-10 text-yellow-500 font-bold hover:bg-gray-600',
+}
+
+const buttonClass = computed(() => buttonThemes[props.theme] || buttonThemes.primary)
 </script>
