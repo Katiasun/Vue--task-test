@@ -1,6 +1,6 @@
 <template>
   <button
-    class="transition-colors duration-200"
+    class="transition-colors duration-200 py-2 px-4 rounded"
     :class="buttonClass"
     v-bind="$attrs"
     @click="handleClick"

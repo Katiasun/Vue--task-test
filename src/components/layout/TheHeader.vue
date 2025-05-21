@@ -79,7 +79,7 @@
 
 <script setup>
 import { defineProps, defineEmits } from 'vue'
-import BaseLink from '../base/BaseButton.vue'
+import BaseLink from '../base/BaseLink.vue'
 import BaseButton from '../base/BaseButton.vue'
 
 const props = defineProps({

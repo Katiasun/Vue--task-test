@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from './components/layouts/DefaultLayout.vue'
 // import EmptyLayout from './components/layouts/emptyLayout/EmptyLayout.vue'
-import TheMainPage from './components/layout/TheMainPage.vue'
+import TheMainPage from './components/views/TheMainPage.vue'
 
 const routes = [
   {
@@ -37,7 +37,7 @@ const routes = [
       {
         path: '',
         name: 'Games',
-        component: () => import('./components/layout/TheGamesPage.vue'),
+        component: () => import('./components/views/TheGamesPage.vue'),
       },
     ],
   },

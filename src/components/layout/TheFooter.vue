@@ -1,14 +1,14 @@
 <template>
   <footer class="bg-black text-yellow-500 py-6">
     <div class="flex flex-wrap justify-center gap-4 mb-6 p-3 text-sm font-bold">
-      <a href="#" class="hover:text-yellow-600">Terms & Conditions</a>
-      <a href="#" class="hover:text-yellow-600">Privacy Policy</a>
-      <a href="#" class="hover:text-yellow-600">Responsible Gaming</a>
-      <a href="#" class="hover:text-yellow-600">FAQ</a>
-      <a href="#" class="hover:text-yellow-600">About Us</a>
-      <a href="#" class="hover:text-yellow-600">Contact Us</a>
-      <a href="#" class="hover:text-yellow-600">Bonus T&C</a>
-      <a href="#" class="hover:text-yellow-600">Affiliates</a>
+      <BaseLink to="/terms-conditions">Terms & Conditions</BaseLink>
+      <BaseLink to="/privacy-policy">Privacy Policy</BaseLink>
+      <BaseLink to="/responsible-gaming">Responsible Gaming</BaseLink>
+      <BaseLink to="/faq">FAQ</BaseLink>
+      <BaseLink to="/about-us">About Us</BaseLink>
+      <BaseLink to="/contact-us">Contact Us</BaseLink>
+      <BaseLink to="/bonus-tc">Bonus T&C</BaseLink>
+      <BaseLink to="/affiliates">Affiliates</BaseLink>
     </div>
 
     <div class="flex flex-wrap justify-center items-center gap-6 mb-6">
@@ -50,6 +50,6 @@
   </footer>
 </template>
 
-<style scoped>
-/* Styles? */
-</style>
+<script setup>
+import BaseLink from '../base/BaseLink.vue'
+</script>
