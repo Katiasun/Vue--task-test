@@ -1,11 +1,9 @@
 <script setup>
-import TheFooter from './components/layout/TheFooter.vue'
-import TheHeader from './components/layout/TheHeader.vue'
+// import DefaultLayout from './components/layouts/defaultLayout/DefaultLayout.vue'
+// import EmptyLayout from './components/layouts/emptyLayout/EmptyLayout.vue'
 </script>
 ;
 
 <template>
-  <TheHeader />
   <router-view />
-  <TheFooter />
 </template>

@@ -1,15 +1,45 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import DefaultLayout from './components/layouts/DefaultLayout.vue'
+// import EmptyLayout from './components/layouts/emptyLayout/EmptyLayout.vue'
 import TheMainPage from './components/layout/TheMainPage.vue'
 
 const routes = [
-  { path: '/', name: 'Home', component: TheMainPage },
-  { path: '/sports', component: { template: '<div>Sports Page</div>' } },
-  { path: '/promotion', component: { template: '<div>Promotion Page</div>' } },
-  { path: '/live-casino', component: { template: '<div>Live Casino Page</div>' } },
+  {
+    path: '/',
+    component: DefaultLayout,
+    children: [{ path: '', name: 'Home', component: TheMainPage }],
+  },
+
+  {
+    path: '/sports',
+    component: DefaultLayout,
+    children: [{ path: '', name: 'Sports', component: { template: '<div>Sports Page</div>' } }],
+  },
+
+  {
+    path: '/promotion',
+    component: DefaultLayout,
+    children: [
+      { path: '', name: 'Promotion', component: { template: '<div>Promotion Page</div>' } },
+    ],
+  },
+  {
+    path: '/live-casino',
+    component: DefaultLayout,
+    children: [
+      { path: '', name: 'Live Casino', component: { template: '<div>Live Casino Page</div>' } },
+    ],
+  },
   {
     path: '/games',
-    name: 'Games',
-    component: () => import('./components/layout/TheGamesPage.vue'),
+    component: DefaultLayout,
+    children: [
+      {
+        path: '',
+        name: 'Games',
+        component: () => import('./components/layout/TheGamesPage.vue'),
+      },
+    ],
   },
 ]
 

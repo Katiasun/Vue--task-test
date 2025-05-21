@@ -2,8 +2,8 @@
   <header class="bg-black text-white py-4">
     <div class="container mx-auto flex items-center">
       <button
-        @click="openSideMenu"
-        :aria-pressed="isMenuOpen ? 'true' : 'false'"
+        @click="handleButtonClick"
+        :aria-pressed="props.isMenuOpen ? 'true' : 'false'"
         class="group inline-flex w-12 h-12 text-slate-800 text-center items-center justify-center rounded shadow-[0_1px_0_theme(colors.slate.950/.04),0_1px_2px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_4px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] transition"
       >
         <span class="sr-only">Menu</span>
@@ -45,7 +45,7 @@
 
       <div class="flex-grow flex justify-center">
         <img
-          src="../../../public/paymentImgs/hashnode.svg"
+          src="../../../../public/paymentImgs/hashnode.svg"
           alt="hashnode"
           class="h-10 w-auto sm:h-12 md:h-14 lg:h-16 object-contain bg-yellow-400 rounded-full p-1"
         />
@@ -74,24 +74,24 @@
         <BaseButton theme="primary" class="hidden md:block mr-2">Sign Up</BaseButton>
       </div>
     </div>
-    <TheSideMenu :isOpen="isMenuOpen" @close="closeSideMenu" />
   </header>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import BaseLink from '../base/BaseLink.vue'
+import { defineProps, defineEmits } from 'vue'
+import BaseLink from '../base/BaseButton.vue'
 import BaseButton from '../base/BaseButton.vue'
-import TheSideMenu from './TheSideMenu.vue'
 
-const isMenuOpen = ref(false)
+const props = defineProps({
+  isMenuOpen: {
+    type: Boolean,
+    required: true,
+  },
+})
+const emit = defineEmits(['open-side-menu'])
 
-function openSideMenu() {
-  isMenuOpen.value = true
-}
-
-function closeSideMenu() {
-  isMenuOpen.value = false
+function handleButtonClick() {
+  emit('open-side-menu')
 }
 </script>
 
