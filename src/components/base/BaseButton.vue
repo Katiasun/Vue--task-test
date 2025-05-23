@@ -27,7 +27,7 @@ const props = defineProps({
 })
 
 const buttonThemes = {
-  primary: 'bg-red-500 text-white hover:bg-red-600',
+  primary: 'bg-red-500 text-white hover:btn-primary',
   secondary: 'bg-yellow-500 text-white hover:bg-yellow-600',
   tertiary: 'border border-yellow-500 rounded-10 text-yellow-500 font-bold hover:bg-gray-600',
 }

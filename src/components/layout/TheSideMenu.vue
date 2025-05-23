@@ -1,6 +1,6 @@
 <template>
-  <transition name="slide" class="bg-black text-white">
-    <aside v-if="isOpen" class="fixed inset-0 z-50 bg-black text-white w-64 shadow-lg">
+  <transition name="slide" class="bg-black">
+    <aside v-if="isOpen" class="fixed inset-0 z-50 bg-black w-64 shadow-lg">
       <button
         @click="handleClose"
         class="absolute top-4 right-4 text-yellow-500 hover:text-yellow-700 text-2xl"
@@ -12,7 +12,9 @@
         <ul class="space-y-4">
           <template v-for="(item, index) in menuItems" :key="index">
             <li v-if="!item.divider" class="flex items-center space-x-2 cursor-pointer">
-              <component :is="iconComponents[item.icon]" class="w-6 h-6 text-yellow-500" />
+              <keep-alive
+                ><component :is="iconComponents[item.icon]" class="w-6 h-6 text-yellow-500"
+              /></keep-alive>
               <span class="text-yellow-500">{{ item.label }}</span>
             </li>
             <hr v-else class="border-gray-600 my-2" />
