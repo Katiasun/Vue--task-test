@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-primary-black text-primary-yellow py-6">
+  <footer class="bg-black text-yellow py-6">
     <div class="flex flex-wrap justify-center gap-4 mb-6 p-3 text-sm font-bold">
       <BaseLink to="/terms-conditions">Terms & Conditions</BaseLink>
       <BaseLink to="/privacy-policy">Privacy Policy</BaseLink>

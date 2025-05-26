@@ -40,7 +40,7 @@
             <p>{{ slide.description }}</p>
           </div>
           <div
-            class="absolute top-0 left-0 w-full h-full z-15 bg-primary-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"
+            class="absolute top-0 left-0 w-full h-full z-15 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"
           ></div>
           <div
             class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"

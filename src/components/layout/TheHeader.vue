@@ -1,10 +1,10 @@
 <template>
-  <header class="bg-primary-black py-4">
+  <header class="bg-black py-4">
     <div class="container mx-auto flex items-center">
       <button
         @click="handleButtonClick"
         :aria-pressed="props.isMenuOpen ? 'true' : 'false'"
-        class="group inline-flex w-12 h-12 text-slate-800 text-center items-center justify-center rounded shadow-[0_1px_0_theme(colors.slate.950/.04),0_1px_2px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_4px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] transition"
+        class="group inline-flex w-12 h-12 text-yellow text-center items-center justify-center rounded shadow-[0_1px_0_theme(colors.slate.950/.04),0_1px_2px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_4px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] transition"
       >
         <span class="sr-only">Menu</span>
         <svg
@@ -47,7 +47,7 @@
         <img
           src="../../assets/paymentIcons/hashnode.svg"
           alt="hashnode"
-          class="h-10 w-auto sm:h-12 md:h-14 lg:h-16 object-contain bg-primary-yellow rounded-full p-1"
+          class="h-10 w-auto sm:h-12 md:h-14 lg:h-16 object-contain bg-yellow rounded-full p-1"
         />
       </div>
 
