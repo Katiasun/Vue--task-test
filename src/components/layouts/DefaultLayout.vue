@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <TheHeader @open-side-menu="openSideMenu" :isMenuOpen="isMenuOpen" />
+  <TheHeader @open-side-menu="openSideMenu" :isMenuOpen="isMenuOpen" />
 
-    <router-view />
+  <router-view />
 
-    <TheFooter />
-    <TheSideMenu :isOpen="isMenuOpen" @close="closeSideMenu" />
-  </div>
+  <TheFooter />
+  <TheSideMenu :isOpen="isMenuOpen" @close="closeSideMenu" />
 </template>
 
 <script setup>

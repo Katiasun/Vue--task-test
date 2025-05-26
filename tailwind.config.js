@@ -7,7 +7,7 @@ export default {
         'btn-primary': ' rgb(220 38 38)',
       },
       fontFamily: {
-        'main-page': ['"Roboto"', 'sans-serif'],
+        custom: ['Lato', 'sans-serif'],
       },
     },
   },

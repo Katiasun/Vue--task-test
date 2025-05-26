@@ -45,7 +45,7 @@
 
       <div class="flex-grow flex justify-center">
         <img
-          src="../../../../public/paymentImgs/hashnode.svg"
+          src="../../assets/paymentIcons/hashnode.svg"
           alt="hashnode"
           class="h-10 w-auto sm:h-12 md:h-14 lg:h-16 object-contain bg-yellow-400 rounded-full p-1"
         />

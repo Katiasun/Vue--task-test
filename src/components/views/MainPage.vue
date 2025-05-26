@@ -1,5 +1,5 @@
 <template>
-  <main class="main-page font-main-page">
+  <main class="main-page font-primary">
     <div class="swiper-controls">
       <div class="swiper-arrows">
         <ChevronLeftIcon class="swiper-button-next custom-prev" />

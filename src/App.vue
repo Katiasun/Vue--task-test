@@ -1,6 +1,8 @@
-<script setup></script>
+<script setup>
+import DefaultLayout from './components/layouts/DefaultLayout.vue'
+</script>
 ;
 
 <template>
-  <router-view />
+  <DefaultLayout />
 </template>

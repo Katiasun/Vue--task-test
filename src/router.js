@@ -1,46 +1,39 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import DefaultLayout from './components/layouts/DefaultLayout.vue'
+// import DefaultLayout from './components/layouts/DefaultLayout.vue'
 // import EmptyLayout from './components/layouts/emptyLayout/EmptyLayout.vue'
-import TheMainPage from './components/views/TheMainPage.vue'
+import MainPage from './components/views/MainPage.vue'
 
 const routes = [
   {
     path: '/',
-    component: DefaultLayout,
-    children: [{ path: '', name: 'Home', component: TheMainPage }],
-  },
-
-  {
-    path: '/sports',
-    component: DefaultLayout,
-    children: [{ path: '', name: 'Sports', component: { template: '<div>Sports Page</div>' } }],
-  },
-
-  {
-    path: '/promotion',
-    component: DefaultLayout,
-    children: [
-      { path: '', name: 'Promotion', component: { template: '<div>Promotion Page</div>' } },
-    ],
-  },
-  {
-    path: '/live-casino',
-    component: DefaultLayout,
-    children: [
-      { path: '', name: 'Live Casino', component: { template: '<div>Live Casino Page</div>' } },
-    ],
+    component: MainPage,
+    name: 'Home',
   },
   {
     path: '/games',
-    component: DefaultLayout,
-    children: [
-      {
-        path: '',
-        name: 'Games',
-        component: () => import('./components/views/TheGamesPage.vue'),
-      },
-    ],
+    component: () => import('./components/views/GamesPage.vue'),
+    name: 'GamesPage',
   },
+  // {
+  //   path: '/sports',
+  //   component: DefaultLayout,
+  //   children: [{ path: '', name: 'Sports', component: { template: '<div>Sports Page</div>' } }],
+  // },
+
+  // {
+  //   path: '/promotion',
+  //   component: DefaultLayout,
+  //   children: [
+  //     { path: '', name: 'Promotion', component: { template: '<div>Promotion Page</div>' } },
+  //   ],
+  // },
+  // {
+  //   path: '/live-casino',
+  //   component: DefaultLayout,
+  //   children: [
+  //     { path: '', name: 'Live Casino', component: { template: '<div>Live Casino Page</div>' } },
+  //   ],
+  // },
 ]
 
 const router = createRouter({

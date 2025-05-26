@@ -13,27 +13,27 @@
 
     <div class="flex flex-wrap justify-center items-center gap-6 mb-6">
       <img
-        src="../../../../public/paymentImgs/visa.svg"
+        src="../../assets/paymentIcons/visa.svg"
         alt="VISA"
         class="h-8 w-auto cursor-pointer bg-slate-400 rounded-full p-1"
       />
       <img
-        src="../../../../public/paymentImgs/nubank.svg"
+        src="../../assets/paymentIcons/nubank.svg"
         alt="nubank"
         class="h-8 w-auto cursor-pointer bg-slate-400 rounded-full p-1"
       />
       <img
-        src="../../../../public/paymentImgs/klarna.svg"
+        src="../../assets/paymentIcons/klarna.svg"
         alt="Klarna"
         class="h-8 w-auto cursor-pointer bg-slate-400 rounded-full p-1"
       />
       <img
-        src="../../../../public/paymentImgs/paypal.svg"
+        src="../../assets/paymentIcons/paypal.svg"
         alt="PayPal"
         class="h-8 w-auto cursor-pointer bg-slate-400 rounded-full p-1"
       />
       <img
-        src="../../../../public/paymentImgs/mastercard.svg"
+        src="../../assets/paymentIcons/mastercard.svg"
         alt="Mastercard"
         class="h-8 w-auto cursor-pointer bg-slate-400 rounded-full p-1"
       />
