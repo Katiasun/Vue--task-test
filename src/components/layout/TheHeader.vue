@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-black text-white py-4">
+  <header class="bg-primary-black py-4">
     <div class="container mx-auto flex items-center">
       <button
         @click="handleButtonClick"
@@ -47,7 +47,7 @@
         <img
           src="../../assets/paymentIcons/hashnode.svg"
           alt="hashnode"
-          class="h-10 w-auto sm:h-12 md:h-14 lg:h-16 object-contain bg-yellow-400 rounded-full p-1"
+          class="h-10 w-auto sm:h-12 md:h-14 lg:h-16 object-contain bg-primary-yellow rounded-full p-1"
         />
       </div>
 

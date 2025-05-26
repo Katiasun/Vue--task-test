@@ -27,9 +27,9 @@ const props = defineProps({
 })
 
 const buttonThemes = {
-  primary: 'bg-red-500 text-white hover:btn-primary',
-  secondary: 'bg-yellow-500 text-white hover:bg-yellow-600',
-  tertiary: 'border border-yellow-500 rounded-10 text-yellow-500 font-bold hover:bg-gray-600',
+  primary: 'bg-btn-primary text-white hover:bg-btn-hover-primary',
+  secondary: 'bg-primary-yellow text-white hover:bg-yellow-hover',
+  tertiary: 'border border-primary-yellow rounded-10 text-primary-yellow font-bold hover:bg-gray',
 }
 
 const buttonClass = computed(() => buttonThemes[props.theme] || buttonThemes.primary)

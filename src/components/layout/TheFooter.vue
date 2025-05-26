@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-black text-yellow-500 py-6">
+  <footer class="bg-primary-black text-primary-yellow py-6">
     <div class="flex flex-wrap justify-center gap-4 mb-6 p-3 text-sm font-bold">
       <BaseLink to="/terms-conditions">Terms & Conditions</BaseLink>
       <BaseLink to="/privacy-policy">Privacy Policy</BaseLink>
@@ -39,9 +39,9 @@
       />
     </div>
 
-    <hr class="border-gray-700 mb-4" />
+    <hr class="border-gray mb-4" />
     <!-- Information about company -->
-    <div class="text-center text-xs text-gray-400 space-y-1">
+    <div class="text-center text-xs text-gray space-y-1">
       <p>GambleCorp Ltd., 123 Casino Street, Berlin, Germany</p>
       <p>Tel: +49 123 456789 | Email: support@gamblecorp.com</p>
       <p>License No. 987654321, issued Gambling Commission, Malta</p>
