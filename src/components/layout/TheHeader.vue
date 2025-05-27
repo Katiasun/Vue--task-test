@@ -4,7 +4,7 @@
       <button
         @click="handleButtonClick"
         :aria-pressed="props.isMenuOpen ? 'true' : 'false'"
-        class="group inline-flex w-12 h-12 text-yellow hover:text-yellow-hover text-center items-center justify-center rounded shadow-[0_1px_0_theme(colors.slate.950/.04),0_1px_2px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_4px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] transition"
+        class="group inline-flex w-12 h-12 text-yellow hover:text-interactive-hover text-center items-center justify-center rounded shadow-[0_1px_0_theme(colors.slate.950/.04),0_1px_2px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_4px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] transition"
       >
         <span class="sr-only">Menu</span>
         <svg

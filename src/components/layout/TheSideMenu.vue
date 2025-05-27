@@ -3,7 +3,7 @@
     <aside v-if="isOpen" class="fixed inset-0 z-50 bg-black w-64 shadow-lg">
       <button
         @click="handleClose"
-        class="absolute top-4 right-4 text-yellow hover:text-yellow-hover text-2xl"
+        class="absolute top-4 right-4 text-yellow hover:text-interactive-hover text-2xl"
         aria-label="Close menu"
       >
         &times;
@@ -15,9 +15,9 @@
               <keep-alive
                 ><component
                   :is="iconComponents[item.icon]"
-                  class="w-6 h-6 text-yellow hover:text-yellow-hover"
+                  class="w-6 h-6 text-yellow hover:text-interactive-hover"
               /></keep-alive>
-              <span class="text-yellow hover:text-yellow-hover">{{ item.label }}</span>
+              <span class="text-yellow hover:text-interactive-hover">{{ item.label }}</span>
             </li>
             <hr v-else class="border-gray my-2" />
           </template>
@@ -27,7 +27,7 @@
       <div class="absolute bottom-4 left-0 w-full px-4">
         <div class="flex flex-col space-y-2">
           <button
-            class="flex items-center justify-center space-x-2 bg-yellow hover:bg-yellow-hover text-black px-4 py-2 rounded transition duration-300 ease-in-out"
+            class="flex items-center justify-center space-x-2 bg-yellow hover:bg-interactive-hover text-black px-4 py-2 rounded transition duration-300 ease-in-out"
           >
             <span class="font-bold text-white">Live Chat</span>
             <svg

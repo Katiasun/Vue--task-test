@@ -1,7 +1,7 @@
 <template>
   <RouterLink
     v-bind="$attrs"
-    class="text-yellow hover:text-yellow-hover transition-colors duration-200"
+    class="text-yellow hover:text-interactive-hover transition-colors duration-200"
   >
     <slot />
   </RouterLink>

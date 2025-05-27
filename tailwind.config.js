@@ -8,9 +8,9 @@ export default {
         yellow: '#eab308',
         white: '#ffffff',
         gray: '#57534d',
-        'yellow-hover': '#ca8a04',
-        'btn-primary': '#F44336',
-        'btn-hover-primary': '#ca3500',
+        'interactive-hover': '#ca8a04',
+        'btn-primary-default': '#F44336',
+        'btn-primary-hover': '#ca3500',
       },
       fontFamily: {
         custom: ['Lato', 'sans-serif'],
