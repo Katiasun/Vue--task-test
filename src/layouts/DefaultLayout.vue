@@ -9,9 +9,9 @@
 
 <script setup>
 import { ref, watch } from 'vue'
-import TheHeader from '../../components/layout/TheHeader.vue'
-import TheSideMenu from '../../components/layout/TheSideMenu.vue'
-import TheFooter from '../../components/layout/TheFooter.vue'
+import TheHeader from '@/components/layout/TheHeader.vue'
+import TheSideMenu from '@/components/layout/TheSideMenu.vue'
+import TheFooter from '@/components/layout/TheFooter.vue'
 
 const isMenuOpen = ref(false)
 

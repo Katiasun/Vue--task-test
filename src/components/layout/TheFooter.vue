@@ -51,5 +51,5 @@
 </template>
 
 <script setup>
-import BaseLink from '../base/BaseLink.vue'
+import BaseLink from '@/components/base/BaseLink.vue'
 </script>

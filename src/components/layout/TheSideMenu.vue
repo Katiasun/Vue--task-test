@@ -68,7 +68,7 @@
 
 <script setup>
 import { watch, defineEmits, defineProps } from 'vue'
-import { menuItems, iconComponents } from '../../menuItems.js'
+import { menuItems, iconComponents } from '@/menuItems.js'
 
 const props = defineProps({
   isOpen: {
