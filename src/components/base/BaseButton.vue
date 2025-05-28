@@ -1,14 +1,3 @@
-<template>
-  <button
-    class="transition-colors duration-200 py-2 px-4 rounded"
-    :class="buttonClass"
-    v-bind="$attrs"
-    @click="handleClick"
-  >
-    <slot />
-  </button>
-</template>
-
 <script setup>
 import { defineProps, computed, defineEmits } from 'vue'
 
@@ -34,3 +23,14 @@ const buttonThemes = {
 
 const buttonClass = computed(() => buttonThemes[props.theme] || buttonThemes.primary)
 </script>
+
+<template>
+  <button
+    class="transition-colors duration-200 py-2 px-4 rounded"
+    :class="buttonClass"
+    v-bind="$attrs"
+    @click="handleClick"
+  >
+    <slot />
+  </button>
+</template>

@@ -1,58 +1,3 @@
-<template>
-  <main class="main-page font-primary">
-    <div class="swiper-controls">
-      <div class="swiper-arrows">
-        <ChevronLeftIcon class="swiper-button-next custom-prev" />
-        <ChevronRightIcon class="swiper-button-prev custom-next" />
-      </div>
-      <BaseButton theme="tertiary" @click="goToGames">See All</BaseButton>
-    </div>
-
-    <Swiper
-      ref="swiperRef"
-      :modules="[Navigation, Pagination, Autoplay]"
-      :pagination="false"
-      :loop="true"
-      :autoplay="{ delay: 3000 }"
-      :slides-per-view="3.5"
-      :space-between="20"
-      :navigation="{
-        prevEl: '.custom-prev',
-        nextEl: '.custom-next',
-      }"
-      :breakpoints="{
-        320: { slidesPerView: 1.2, spaceBetween: 10 },
-        640: { slidesPerView: 2.2, spaceBetween: 15 },
-        1024: { slidesPerView: 3.5, spaceBetween: 20 },
-      }"
-      class="mySwiper"
-    >
-      <SwiperSlide v-for="(slide, index) in slides" :key="index">
-        <div
-          class="slide-content group relative"
-          :style="{ backgroundImage: `url(${slide.image})` }"
-        >
-          <div class="absolute bottom-2 right-4 z-5">
-            <HeartIcon class="h-6 w-6 text-btn-primary" />
-          </div>
-          <div class="text-overlay">
-            <h2>{{ slide.title }}</h2>
-            <p>{{ slide.description }}</p>
-          </div>
-          <div
-            class="absolute top-0 left-0 w-full h-full z-15 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"
-          ></div>
-          <div
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          >
-            <BaseButton theme="primary">Play Now</BaseButton>
-          </div>
-        </div>
-      </SwiperSlide>
-    </Swiper>
-  </main>
-</template>
-
 <script setup>
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -120,6 +65,61 @@ const slides = [
   },
 ]
 </script>
+
+<template>
+  <main class="main-page font-primary">
+    <div class="swiper-controls">
+      <div class="swiper-arrows">
+        <ChevronLeftIcon class="swiper-button-next custom-prev" />
+        <ChevronRightIcon class="swiper-button-prev custom-next" />
+      </div>
+      <BaseButton theme="tertiary" @click="goToGames">See All</BaseButton>
+    </div>
+
+    <Swiper
+      ref="swiperRef"
+      :modules="[Navigation, Pagination, Autoplay]"
+      :pagination="false"
+      :loop="true"
+      :autoplay="{ delay: 3000 }"
+      :slides-per-view="3.5"
+      :space-between="20"
+      :navigation="{
+        prevEl: '.custom-prev',
+        nextEl: '.custom-next',
+      }"
+      :breakpoints="{
+        320: { slidesPerView: 1.2, spaceBetween: 10 },
+        640: { slidesPerView: 2.2, spaceBetween: 15 },
+        1024: { slidesPerView: 3.5, spaceBetween: 20 },
+      }"
+      class="mySwiper"
+    >
+      <SwiperSlide v-for="(slide, index) in slides" :key="index">
+        <div
+          class="slide-content group relative"
+          :style="{ backgroundImage: `url(${slide.image})` }"
+        >
+          <div class="absolute bottom-2 right-4 z-5">
+            <HeartIcon class="h-6 w-6 text-btn-primary" />
+          </div>
+          <div class="text-overlay">
+            <h2>{{ slide.title }}</h2>
+            <p>{{ slide.description }}</p>
+          </div>
+          <div
+            class="absolute top-0 left-0 w-full h-full z-15 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"
+          ></div>
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+            <BaseButton theme="primary">Play Now</BaseButton>
+          </div>
+        </div>
+      </SwiperSlide>
+    </Swiper>
+  </main>
+</template>
 
 <style scoped>
 .main-page {

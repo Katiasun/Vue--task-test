@@ -1,14 +1,6 @@
-<template>
-  <TheHeader @open-side-menu="openSideMenu" :isMenuOpen="isMenuOpen" />
-
-  <router-view />
-
-  <TheFooter />
-  <TheSideMenu :isOpen="isMenuOpen" @close="closeSideMenu" />
-</template>
-
 <script setup>
 import { ref, watch } from 'vue'
+
 import TheHeader from '@/components/layout/TheHeader.vue'
 import TheSideMenu from '@/components/layout/TheSideMenu.vue'
 import TheFooter from '@/components/layout/TheFooter.vue'
@@ -30,3 +22,13 @@ watch(
   },
 )
 </script>
+
+<template>
+  <TheHeader @open-side-menu="openSideMenu" :isMenuOpen="isMenuOpen" />
+
+  <router-view />
+
+  <TheFooter />
+
+  <TheSideMenu :isOpen="isMenuOpen" @close="closeSideMenu" />
+</template>

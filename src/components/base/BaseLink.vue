@@ -1,3 +1,7 @@
+<script setup>
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
   <RouterLink
     v-bind="$attrs"
@@ -6,7 +10,3 @@
     <slot />
   </RouterLink>
 </template>
-
-<script setup>
-import { RouterLink } from 'vue-router'
-</script>

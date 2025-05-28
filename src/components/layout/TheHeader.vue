@@ -1,3 +1,21 @@
+<script setup>
+import { defineProps, defineEmits } from 'vue'
+import BaseLink from '@/components/base/BaseLink.vue'
+import BaseButton from '@/components/base/BaseButton.vue'
+
+const props = defineProps({
+  isMenuOpen: {
+    type: Boolean,
+    required: true,
+  },
+})
+const emit = defineEmits(['open-side-menu'])
+
+function handleButtonClick() {
+  emit('open-side-menu')
+}
+</script>
+
 <template>
   <header class="bg-black py-4">
     <div class="container mx-auto flex items-center">
@@ -76,23 +94,5 @@
     </div>
   </header>
 </template>
-
-<script setup>
-import { defineProps, defineEmits } from 'vue'
-import BaseLink from '@/components/base/BaseLink.vue'
-import BaseButton from '@/components/base/BaseButton.vue'
-
-const props = defineProps({
-  isMenuOpen: {
-    type: Boolean,
-    required: true,
-  },
-})
-const emit = defineEmits(['open-side-menu'])
-
-function handleButtonClick() {
-  emit('open-side-menu')
-}
-</script>
 
 <style scoped></style>

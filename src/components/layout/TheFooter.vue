@@ -1,3 +1,7 @@
+<script setup>
+import BaseLink from '@/components/base/BaseLink.vue'
+</script>
+
 <template>
   <footer class="bg-black text-yellow py-6">
     <div class="flex flex-wrap justify-center gap-4 mb-6 p-3 text-sm font-bold">
@@ -49,7 +53,3 @@
     </div>
   </footer>
 </template>
-
-<script setup>
-import BaseLink from '@/components/base/BaseLink.vue'
-</script>

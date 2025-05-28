@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import MainPage from '@/components/views/MainPage.vue'
+import MainPage from '@/views/MainPage.vue'
 
 const routes = [
   {
@@ -9,29 +9,15 @@ const routes = [
   },
   {
     path: '/games',
-    component: () => import('../components/views/GamesPage.vue'),
+    component: () => import('@/views/GamesPage.vue'),
     name: 'GamesPage',
   },
-  // {
-  //   path: '/sports',
-  //   component: DefaultLayout,
-  //   children: [{ path: '', name: 'Sports', component: { template: '<div>Sports Page</div>' } }],
-  // },
-
-  // {
-  //   path: '/promotion',
-  //   component: DefaultLayout,
-  //   children: [
-  //     { path: '', name: 'Promotion', component: { template: '<div>Promotion Page</div>' } },
-  //   ],
-  // },
-  // {
-  //   path: '/live-casino',
-  //   component: DefaultLayout,
-  //   children: [
-  //     { path: '', name: 'Live Casino', component: { template: '<div>Live Casino Page</div>' } },
-  //   ],
-  // },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: () => import('@/views/NotFoundPage.vue'),
+    meta: { layout: 'empty' },
+  },
 ]
 
 const router = createRouter({

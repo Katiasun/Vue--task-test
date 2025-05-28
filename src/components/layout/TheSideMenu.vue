@@ -1,3 +1,29 @@
+<script setup>
+import { watch, defineEmits, defineProps } from 'vue'
+import { menuItems, iconComponents } from '@/menuItems.js'
+
+const props = defineProps({
+  isOpen: {
+    type: Boolean,
+    required: true,
+  },
+})
+
+const emit = defineEmits(['close'])
+
+function handleClose() {
+  emit('close')
+}
+
+// Блокуємо прокрутку сторінки, коли меню відкрите
+watch(
+  () => props.isOpen,
+  (newVal) => {
+    document.body.classList.toggle('overflow-hidden', newVal)
+  },
+)
+</script>
+
 <template>
   <transition name="slide" class="bg-black">
     <aside v-if="isOpen" class="fixed inset-0 z-50 bg-black w-64 shadow-lg">
@@ -65,32 +91,6 @@
     </aside>
   </transition>
 </template>
-
-<script setup>
-import { watch, defineEmits, defineProps } from 'vue'
-import { menuItems, iconComponents } from '@/menuItems.js'
-
-const props = defineProps({
-  isOpen: {
-    type: Boolean,
-    required: true,
-  },
-})
-
-const emit = defineEmits(['close'])
-
-function handleClose() {
-  emit('close')
-}
-
-// Блокуємо прокрутку сторінки, коли меню відкрите
-watch(
-  () => props.isOpen,
-  (newVal) => {
-    document.body.classList.toggle('overflow-hidden', newVal)
-  },
-)
-</script>
 
 <style scoped>
 .slide-enter-active,

@@ -1,14 +1,14 @@
-<template>
-  <div class="games-page">
-    <h1>Games Page</h1>
-  </div>
-</template>
-
 <script>
 export default {
   name: 'TheGamesPage',
 }
 </script>
+
+<template>
+  <div class="games-page">
+    <h1>Games Page</h1>
+  </div>
+</template>
 
 <style scoped>
 .games-page {
