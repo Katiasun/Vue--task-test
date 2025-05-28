@@ -22,5 +22,4 @@ const layoutComponent = computed(() => {
       <component :is="Component" :key="route.params.locale" />
     </router-view>
   </component>
-  <!-- <DefaultLayout /> -->
 </template>
