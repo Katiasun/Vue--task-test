@@ -3,6 +3,13 @@ import { defineProps, defineEmits } from 'vue'
 import BaseLink from '@/components/base/BaseLink.vue'
 import BaseButton from '@/components/base/BaseButton.vue'
 
+const navLinks = [
+  { to: '/games', text: 'Games' },
+  { to: '/games', text: 'Sport' },
+  { to: '/games', text: 'Promotions' },
+  { to: '/games', text: 'Live Casino' },
+]
+
 const props = defineProps({
   isMenuOpen: {
     type: Boolean,
@@ -55,10 +62,7 @@ function handleButtonClick() {
       </button>
 
       <nav :class="['md:flex space-x-4 ml-4', isMenuOpen ? 'hidden md:block' : 'hidden md:block']">
-        <BaseLink to="/">Games</BaseLink>
-        <BaseLink to="/sports">Sports</BaseLink>
-        <BaseLink to="/promotion">Promotion</BaseLink>
-        <BaseLink to="/live-casino">Live Casino</BaseLink>
+        <BaseLink v-for="link in navLinks" :key="link.to" :to="link.to">{{ link.text }}</BaseLink>
       </nav>
 
       <div class="flex-grow flex justify-center">
