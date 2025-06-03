@@ -6,54 +6,20 @@ import BaseInput from '@/components/base/BaseInput.vue'
 const searchText = ref('')
 
 const slides = [
-  {
-    image: '/src/imgs/main1.jpg',
-    title: 'Slide 1 Title', // Added title
-    buttonText: 'Learn More',
-    buttonTheme: 'primary',
-  },
-  {
-    image: '/src/imgs/main2.jpg',
-    title: 'Slide 2 Title', // Added title
-    buttonText: 'Discover',
-    buttonTheme: 'primary',
-  },
-  {
-    image: '/src/imgs/main3.jpg',
-    title: 'Slide 3 Title', // Added title
-    buttonText: 'Get Started',
-    buttonTheme: 'primary',
-  },
-  {
-    image: '/src/imgs/main4.jpg',
-    title: 'Slide 4 Title', // Added title
-    buttonText: 'Get Started',
-    buttonTheme: 'primary',
-  },
-  {
-    image: '/src/imgs/main5.jpg',
-    title: 'Slide 5 Title', // Added title
-    buttonText: 'Get Started',
-    buttonTheme: 'primary',
-  },
-  {
-    image: '/src/imgs/main6.jpg',
-    title: 'Slide 6 Title', // Added title
-    buttonText: 'Get Started',
-    buttonTheme: 'primary',
-  },
-  {
-    image: '/src/imgs/main7.jpg',
-    title: 'Slide 7 Title', // Added title
-    buttonText: 'Get Started',
-    buttonTheme: 'primary',
-  },
-  {
-    image: '/src/imgs/main7.jpg',
-    title: 'Slide 8 Title', // Added title
-    buttonText: 'Get Started',
-    buttonTheme: 'primary',
-  },
+  { title: 'Jumbo Safari' },
+  { title: 'Danny Dollar' },
+  { title: 'Hot Chilli Bells' },
+  { title: '5 Star Coins: Hold & Win' },
+  { title: 'Lord Venom' },
+  { title: 'Donny Dough' },
+  { title: 'Ultra Fresh' },
+  { title: '4 Fantastic Fish' },
+  { title: 'Club Tropicana' },
+  { title: 'Carnival Cat: Bonus Combo' },
+  { title: 'Egypt Coin Link' },
+  { title: 'Blast the Bass' },
+  { title: 'Ultra Hot Deluxe' },
+  { title: 'Bigger Bass Splash' },
 ]
 </script>
 
