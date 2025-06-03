@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
 import BaseInput from '@/components/base/BaseInput.vue'
 
@@ -21,6 +21,21 @@ const slides = [
   { title: 'Ultra Hot Deluxe' },
   { title: 'Bigger Bass Splash' },
 ]
+
+// New computed property for card filtering
+const filteredSlides = computed(() => {
+  if (!searchText.value) {
+    return slides
+  }
+
+  // Convert the search text to lowercase for case-insensitive search
+  const searchTerm = searchText.value.toLocaleLowerCase()
+
+  // Filter slides
+  return slides.filter((slide) => {
+    return slide.title.toLowerCase().startsWith(searchTerm)
+  })
+})
 </script>
 
 <template>
@@ -28,12 +43,12 @@ const slides = [
     <BaseInput v-model="searchText" placeholder="Search for slides..." />
 
     <ul
-      class="list-none w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+      class="list-none w-full max-w-6xl grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6"
     >
       <li
-        v-for="(item, index) in slides"
+        v-for="(item, index) in filteredSlides"
         :key="index"
-        class="bg-gray rounded-lg shadow-lg p-4 text-yellow text-center text-xl font-semibold flex justify-center items-center transform hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer"
+        class="bg-gray min-h-[100px] rounded-lg shadow-lg p-4 text-yellow text-center text-xl font-semibold flex justify-center items-center transform hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer"
       >
         {{ item.title }}
       </li>
