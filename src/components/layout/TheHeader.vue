@@ -5,7 +5,7 @@ import BaseButton from '@/components/base/BaseButton.vue'
 
 const navLinks = [
   { to: '/games', text: 'Games' },
-  { to: '/games', text: 'Sport' },
+  { to: '/sport', text: 'Sport' },
   { to: '/games', text: 'Promotions' },
   { to: '/games', text: 'Live Casino' },
 ]
@@ -66,11 +66,12 @@ function handleButtonClick() {
       </nav>
 
       <div class="flex-grow flex justify-center">
-        <img
-          src="../../assets/paymentIcons/hashnode.svg"
-          alt="hashnode"
-          class="h-10 w-auto sm:h-12 md:h-14 lg:h-16 object-contain bg-yellow rounded-full p-1"
-        />
+        <RouterLink to="/" class="cursor-pointer">
+          <img
+            src="../../assets/paymentIcons/hashnode.svg"
+            alt="hashnode"
+            class="h-10 w-auto sm:h-12 md:h-14 lg:h-16 object-contain bg-yellow rounded-full p-1"
+        /></RouterLink>
       </div>
 
       <div class="flex items-center">

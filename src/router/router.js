@@ -13,6 +13,11 @@ const routes = [
     name: 'GamesPage',
   },
   {
+    path: '/sport',
+    component: () => import('@/views/SportPage.vue'),
+    name: 'SportPage',
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import('@/views/NotFoundPage.vue'),
