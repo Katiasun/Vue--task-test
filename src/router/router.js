@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from '@/views/MainPage.vue'
+// import { name } from '@vue/eslint-config-prettier/skip-formatting'
 
 const routes = [
   {
@@ -16,6 +17,16 @@ const routes = [
     path: '/sport',
     component: () => import('@/views/SportPage.vue'),
     name: 'SportPage',
+  },
+  {
+    path: '/promotions',
+    component: () => import('@/views/PromotionsPage.vue'),
+    name: 'PromotionsPage',
+  },
+  {
+    path: '/live-casino',
+    component: () => import('@/views/LiveCasinoPage.vue'),
+    name: 'LiveCasinoPage',
   },
   {
     path: '/:pathMatch(.*)*',

@@ -6,8 +6,8 @@ import BaseButton from '@/components/base/BaseButton.vue'
 const navLinks = [
   { to: '/games', text: 'Games' },
   { to: '/sport', text: 'Sport' },
-  { to: '/games', text: 'Promotions' },
-  { to: '/games', text: 'Live Casino' },
+  { to: '/promotions', text: 'Promotions' },
+  { to: '/live-casino', text: 'Live Casino' },
 ]
 
 const props = defineProps({

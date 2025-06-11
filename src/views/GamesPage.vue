@@ -39,7 +39,9 @@ const filteredSlides = computed(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-black flex flex-col items-center p-4 sm:p-8">
+  <div
+    class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black flex flex-col items-center p-4 sm:p-8"
+  >
     <BaseInput v-model="searchText" placeholder="Search for slides..." />
 
     <ul
