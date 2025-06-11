@@ -52,6 +52,10 @@ function handleToggleFavorite() {
       <h2 class="text-lg font-semibold text-yellow">{{ slide.title }}</h2>
       <HeartIcon
         class="w-6 h-6 hover:text-btn-primary-default transition-opacity duration-300 cursor-pointer"
+        :class="{
+          'text-red-500': slide.isFavorite,
+          'text-gray-400 hover:text-red-500': !slide.isFavorite,
+        }"
         @click="handleToggleFavorite"
       />
     </div>
