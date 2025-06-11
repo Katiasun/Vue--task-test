@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/20/solid'
 
-import GameItem from './GameItem.vue'
+import GameItem from '@/components/games/GameItem.vue'
 import BaseButton from '@/components/base/BaseButton.vue'
 
 const props = defineProps({
