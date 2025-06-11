@@ -75,9 +75,12 @@ function handleSeeAll() {
         nextEl: '.custom-next-arrow',
       }"
       :breakpoints="{
-        320: { slidesPerView: 1.2, spaceBetween: 10 },
-        640: { slidesPerView: 2.2, spaceBetween: 15 },
-        1024: { slidesPerView: 3.5, spaceBetween: 20 },
+        320: { slidesPerView: 2.3, spaceBetween: 10 },
+        640: { slidesPerView: 3.5, spaceBetween: 15 },
+        768: { slidesPerView: 4.5, spaceBetween: 15 },
+        1024: { slidesPerView: 5.5, spaceBetween: 20 },
+        1280: { slidesPerView: 6.5, spaceBetween: 20 },
+        1536: { slidesPerView: 7.5, spaceBetween: 20 },
       }"
       class="mySwiper"
     >

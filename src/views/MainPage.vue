@@ -69,7 +69,9 @@ const slides = ref([
 </script>
 
 <template>
-  <main class="bg-black font-primary py-16 px-5 relative">
+  <main
+    class="bg-gradient-to-br from-slate-950 via-slate-900 to-black font-primary py-16 px-5 relative min-h-screen"
+  >
     <GameSwiper
       :slides="slides"
       @play-now="handlePlayNowEvent"
