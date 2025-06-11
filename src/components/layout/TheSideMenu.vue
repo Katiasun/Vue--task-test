@@ -26,7 +26,10 @@ watch(
 
 <template>
   <transition name="slide" class="bg-black">
-    <aside v-if="isOpen" class="fixed inset-0 z-50 bg-black w-64 shadow-lg">
+    <aside
+      v-if="isOpen"
+      class="flex-col flex overflow-y-auto fixed inset-0 z-50 bg-black w-64 shadow-lg gap-6 p-4"
+    >
       <button
         @click="handleClose"
         class="absolute top-4 right-4 text-yellow hover:text-interactive-hover text-2xl"
@@ -34,7 +37,7 @@ watch(
       >
         &times;
       </button>
-      <nav class="mt-16 px-4 space-y-4">
+      <nav class="mt-16 space-y-4">
         <ul class="space-y-4">
           <template v-for="(item, index) in menuItems" :key="index">
             <li v-if="!item.divider" class="flex items-center space-x-2 cursor-pointer">
@@ -50,7 +53,7 @@ watch(
         </ul>
       </nav>
 
-      <div class="absolute bottom-4 left-0 w-full px-4">
+      <div class="mt-auto w-full">
         <div class="flex flex-col space-y-2">
           <button
             class="flex items-center justify-center space-x-2 bg-yellow hover:bg-interactive-hover text-black px-4 py-2 rounded transition duration-300 ease-in-out"

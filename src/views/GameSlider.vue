@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/20/solid'
 
-import GameSlide from './GameSlide.vue'
+import GameItem from './GameItem.vue'
 import BaseButton from '@/components/base/BaseButton.vue'
 
 const props = defineProps({
@@ -85,7 +85,7 @@ function handleSeeAll() {
       class="mySwiper"
     >
       <SwiperSlide v-for="(slide, index) in props.slides" :key="index">
-        <GameSlide
+        <GameItem
           :slide="slide"
           @play-now="handlePlayNowEvent"
           @toggle-favorite="handleToggleFavoriteEvent"
