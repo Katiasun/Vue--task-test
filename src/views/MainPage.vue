@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-import GameSlider from './GameSlider.vue'
+import GameSlider from '@/components/games/GameSlider.vue'
 
 const router = useRouter()
 
