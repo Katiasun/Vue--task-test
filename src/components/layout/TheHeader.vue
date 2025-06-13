@@ -21,6 +21,13 @@ const emit = defineEmits(['open-side-menu'])
 function handleButtonClick() {
   emit('open-side-menu')
 }
+
+const favDialog = document.getElementById('favDialog')
+function openFavDialog() {
+  if (favDialog) {
+    favDialog.showModal()
+  }
+}
 </script>
 
 <template>
@@ -93,8 +100,12 @@ function handleButtonClick() {
         </button>
         <CircleFlags country="gb" size="small" class="mr-2 cursor-pointer" />
 
-        <BaseButton theme="secondary" class="hidden md:block mr-2">Sign In</BaseButton>
-        <BaseButton theme="primary" class="hidden md:block mr-2">Sign Up</BaseButton>
+        <BaseButton @click="openFavDialog" theme="secondary" class="hidden md:block mr-2"
+          >Sign In</BaseButton
+        >
+        <BaseButton @click="openFavDialog" theme="primary" class="hidden md:block mr-2"
+          >Sign Up</BaseButton
+        >
       </div>
     </div>
   </header>
