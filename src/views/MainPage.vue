@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-import GameSlider from '@/components/games/GameSlider.vue'
+import GamesSlider from '@/components/games/GamesSlider.vue'
 
 const router = useRouter()
 
@@ -72,6 +72,18 @@ const slides = ref([
   <main
     class="bg-gradient-to-br from-slate-950 via-slate-900 to-black font-primary py-16 px-5 relative min-h-screen"
   >
-    <GameSlider :slides="slides" @toggle-favorite="handleToggleFavorite" @see-all="goToGames" />
+    <GamesSlider
+      :slides="slides"
+      @toggle-favorite="handleToggleFavorite"
+      @see-all="goToGames"
+      title="New Games"
+    />
+
+    <GamesSlider
+      :slides="slides"
+      @toggle-favorite="handleToggleFavorite"
+      @see-all="goToGames"
+      title="Trending Games"
+    />
   </main>
 </template>
