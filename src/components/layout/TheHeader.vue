@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, defineEmits } from 'vue'
+import { defineProps, defineEmits, ref, onMounted } from 'vue'
 import BaseLink from '@/components/base/BaseLink.vue'
 import BaseButton from '@/components/base/BaseButton.vue'
 
@@ -16,16 +16,29 @@ const props = defineProps({
     required: true,
   },
 })
-const emit = defineEmits(['open-side-menu'])
+const emit = defineEmits(['open-side-menu', 'open-dialog'])
 
 function handleButtonClick() {
   emit('open-side-menu')
 }
 
-const favDialog = document.getElementById('favDialog')
+// Використовуємо ref для збереження посилання на елемент <dialog>
+const favDialog = ref(null)
+
+onMounted(() => {
+  favDialog.value = document.getElementById('favDialog')
+  // Отримуємо посилання на елемент <dialog> після монтування компонента
+  if (!favDialog.value) {
+    console.error("The 'favDialog' element was not found in the DOM. Ensure BasePopup is rendered.")
+  }
+})
+
+// const favDialog = document.getElementById('favDialog')
 function openFavDialog() {
-  if (favDialog) {
-    favDialog.showModal()
+  if (favDialog.value) {
+    favDialog.value.showModal()
+  } else {
+    console.error('Dialog element not found')
   }
 }
 </script>
