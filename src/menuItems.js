@@ -18,15 +18,15 @@ export const iconComponents = {
 }
 
 export const menuItems = [
-  { label: 'Promotions', icon: 'GiftIcon' },
+  { label: 'Promotions', icon: 'GiftIcon', path: '/promotions' },
   { label: 'Daily Bonus Map', icon: 'CalendarIcon' },
   { label: 'Shop', icon: 'ShoppingCartIcon' },
   { divider: true },
-  { label: 'Casino', icon: 'CubeIcon' },
-  { label: 'Top Games', icon: 'StarIcon' },
-  { label: 'Live Games', icon: 'CubeIcon' },
+  { label: 'Casino', icon: 'CubeIcon', path: '/live-casino' },
+  { label: 'Top Games', icon: 'StarIcon', path: '/games' },
+  { label: 'Live Games', icon: 'CubeIcon', path: '/games' },
   { divider: true },
-  { label: 'Sports', icon: 'TrophyIcon' },
+  { label: 'Sports', icon: 'TrophyIcon', path: '/sport' },
   { divider: true },
   { label: 'VIP Club', icon: 'StarIcon' },
 ]
