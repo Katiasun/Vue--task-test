@@ -19,6 +19,8 @@ const buttonThemes = {
   primary: 'bg-btn-primary-default text-white hover:bg-btn-primary-hover',
   secondary: 'bg-yellow text-white hover:bg-interactive-hover',
   tertiary: 'border border-yellow rounded-10 text-yellow font-bold hover:bg-gray',
+  language:
+    'flex justify-center items-center bg-black space-x-2 border border-btn-primary py-2 px-4 rounded transition duration-300 ease-in-out',
 }
 
 const buttonClass = computed(() => buttonThemes[props.theme] || buttonThemes.primary)
