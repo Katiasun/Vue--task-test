@@ -1,7 +1,9 @@
 <script setup>
-import { defineProps, defineEmits, ref, onMounted } from 'vue'
+import { defineProps, defineEmits } from 'vue'
 import BaseLink from '@/components/base/BaseLink.vue'
 import BaseButton from '@/components/base/BaseButton.vue'
+
+import { useBasePopup } from '@/composables/useBasePopup'
 
 const navLinks = [
   { to: '/games', text: 'Games' },
@@ -22,25 +24,7 @@ function handleButtonClick() {
   emit('open-side-menu')
 }
 
-// Використовуємо ref для збереження посилання на елемент <dialog>
-const favDialog = ref(null)
-
-onMounted(() => {
-  favDialog.value = document.getElementById('favDialog')
-  // Отримуємо посилання на елемент <dialog> після монтування компонента
-  if (!favDialog.value) {
-    console.error("The 'favDialog' element was not found in the DOM. Ensure BasePopup is rendered.")
-  }
-})
-
-// const favDialog = document.getElementById('favDialog')
-function openFavDialog() {
-  if (favDialog.value) {
-    favDialog.value.showModal()
-  } else {
-    console.error('Dialog element not found')
-  }
-}
+const { openPopup } = useBasePopup()
 </script>
 
 <template>
@@ -113,12 +97,13 @@ function openFavDialog() {
         </button>
         <CircleFlags country="gb" size="small" class="mr-2 cursor-pointer" />
 
-        <BaseButton @click="openFavDialog" theme="secondary" class="hidden md:block mr-2"
-          >Sign In</BaseButton
-        >
-        <BaseButton @click="openFavDialog" theme="primary" class="hidden md:block mr-2"
-          >Sign Up</BaseButton
-        >
+        <BaseButton @click="openPopup" theme="secondary" class="hidden md:block mr-2">
+          Sign In
+        </BaseButton>
+
+        <BaseButton @click="openPopup" theme="primary" class="hidden md:block mr-2">
+          Sign Up
+        </BaseButton>
       </div>
     </div>
   </header>
