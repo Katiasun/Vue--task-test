@@ -2,6 +2,10 @@
 import { watch, defineEmits, defineProps } from 'vue'
 import { menuItems, iconComponents } from '@/menuItems.js'
 
+import { useBasePopup } from '@/composables/useBasePopup'
+
+import BaseButton from '@/components/base/BaseButton.vue'
+
 const props = defineProps({
   isOpen: {
     type: Boolean,
@@ -22,6 +26,8 @@ watch(
     document.body.classList.toggle('overflow-hidden', newVal)
   },
 )
+
+const { openPopup } = useBasePopup()
 </script>
 
 <template>
@@ -41,12 +47,18 @@ watch(
         <ul class="space-y-4">
           <template v-for="(item, index) in menuItems" :key="index">
             <li v-if="!item.divider" class="flex items-center space-x-2 cursor-pointer">
-              <keep-alive
-                ><component
+              <router-link
+                v-if="item.path"
+                :to="item.path"
+                @click="handleClose"
+                class="flex items-center space-x-2 p-2 rounded-lg transition-colors duration-200 ease-in-out hover:bg-gray-700"
+              >
+                <component
                   :is="iconComponents[item.icon]"
                   class="w-6 h-6 text-yellow hover:text-interactive-hover"
-              /></keep-alive>
-              <span class="text-yellow hover:text-interactive-hover">{{ item.label }}</span>
+                />
+                <span class="text-yellow hover:text-interactive-hover">{{ item.label }}</span>
+              </router-link>
             </li>
             <hr v-else class="border-gray my-2" />
           </template>
@@ -55,8 +67,10 @@ watch(
 
       <div class="mt-auto w-full">
         <div class="flex flex-col space-y-2">
-          <button
-            class="flex items-center justify-center space-x-2 bg-yellow hover:bg-interactive-hover text-black px-4 py-2 rounded transition duration-300 ease-in-out"
+          <BaseButton
+            @click="openPopup"
+            theme="secondary"
+            class="flex justify-center items-center px-4 py-2 space-x-2 rounded transition duration-300 ease-in-out"
           >
             <span class="font-bold text-white">Live Chat</span>
             <svg
@@ -73,12 +87,10 @@ watch(
                 d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8a9.985 9.985 0 01-4.9-1.3L3 21l1.3-4.9A9.985 9.985 0 013 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
               />
             </svg>
-          </button>
+          </BaseButton>
 
           <!-- English Button -->
-          <button
-            class="flex justify-center items-center bg-black space-x-2 border border-btn-primary py-2 px-4 rounded transition duration-300 ease-in-out"
-          >
+          <BaseButton theme="language">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -88,7 +100,7 @@ watch(
               <path d="M4 2h2v20H4V2zm2 0h14l-3 5 3 5H6V2z" />
             </svg>
             <span class="font-bold text-yellow">English</span>
-          </button>
+          </BaseButton>
         </div>
       </div>
     </aside>
