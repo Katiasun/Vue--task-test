@@ -6,7 +6,7 @@ import GameItem from '@/components/games/GamesItem.vue'
 
 const searchText = ref('')
 
-const slides = ref([
+const allGames = ref([
   {
     image: '/src/imgs/main1.jpg',
     title: 'Jumbo Safari',
@@ -108,35 +108,37 @@ const slides = ref([
 ])
 
 // New computed property for card filtering
-const filteredSlides = computed(() => {
+const filteredGames = computed(() => {
   if (!searchText.value) {
-    return slides.value
+    return allGames.value
   }
 
   // Convert the search text to lowercase for case-insensitive search
   const searchTerm = searchText.value.toLocaleLowerCase()
 
   // Filter slides
-  return slides.value.filter((slide) => {
+  return allGames.value.filter((slide) => {
     return slide.title.toLowerCase().startsWith(searchTerm)
   })
 })
 
 // Додаткова обчислювана властивість для перевірки, чи немає результатів пошуку
-const noResults = computed(() => {
-  return searchText.value.length > 0 && filteredSlides.value.length === 0
+const hasNoResults = computed(() => {
+  return searchText.value.length > 0 && filteredGames.value.length === 0
 })
 
-function handlePlayNow(game) {
+function handleGamePlay(game) {
   alert(`Граємо в гру: ${game.title}`)
 }
 
 // Обробник для події 'toggle-favorite' від GameItem
-function handleToggleFavorite(game) {
-  const index = slides.value.findIndex((s) => s.title === game.title)
+function handleGameFavoriteToggle(game) {
+  const index = allGames.value.findIndex((s) => s.title === game.title)
   if (index !== -1) {
-    slides.value[index].isFavorite = !slides.value[index].isFavorite
-    console.log(`${game.title} тепер ${slides.value[index].isFavorite ? 'улюблена' : 'неулюблена'}`)
+    allGames.value[index].isFavorite = !allGames.value[index].isFavorite
+    console.log(
+      `${game.title} тепер ${allGames.value[index].isFavorite ? 'улюблена' : 'неулюблена'}`,
+    )
   }
 }
 </script>
@@ -150,23 +152,24 @@ function handleToggleFavorite(game) {
     <section class="w-full max-w-6xl">
       <h2 class="text-2xl font-semibold text-yellow mb-4">Усі Ігри</h2>
 
-      <div v-if="noResults" class="text-center text-yellow text-lg py-8">
+      <div v-if="hasNoResults" class="text-center text-yellow text-lg py-8">
         <p>На жаль, за вашим запитом {{ searchText }} нічого не знайдено.</p>
         <p>Спробуйте інший запит або перевірте правильність написання.</p>
       </div>
 
       <ul
-        class="list-none w-full max-w-6xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6"
+        class="list-none max-w-6xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6"
       >
         <li
-          v-for="(item, index) in filteredSlides"
+          v-for="(item, index) in filteredGames"
           :key="`list-${index}`"
-          class="min-h-[100px] rounded-lg shadow-lg p-2 text-center flex justify-center items-center transform hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer"
+          class="w-full rounded-lg shadow-lg p-2 text-center flex justify-center items-center transform hover:scale-105 transition-transform duration-200 ease-in-out cursor-pointer"
         >
           <GameItem
-            :slide="item"
-            @play-now="handlePlayNow"
-            @toggle-favorite="handleToggleFavorite"
+            class="w-full"
+            :game="item"
+            @play-now="handleGamePlay"
+            @toggle-favorite="handleGameFavoriteToggle"
           />
         </li>
       </ul>
