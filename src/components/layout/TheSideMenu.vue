@@ -1,8 +1,9 @@
 <script setup>
 import { watch, defineEmits, defineProps } from 'vue'
-import { menuItems, iconComponents } from '@/menuItems.js'
 
-import { useBasePopup } from '@/composables/useBasePopup'
+import { menuItems, iconComponents } from '@/constants/menuItems.js'
+
+import { usePopup } from '@/composables/usePopup'
 
 import BaseButton from '@/components/base/BaseButton.vue'
 
@@ -15,7 +16,7 @@ const props = defineProps({
 
 const emit = defineEmits(['close'])
 
-function handleClose() {
+function handleCloseMenuClick() {
   emit('close')
 }
 
@@ -27,7 +28,7 @@ watch(
   },
 )
 
-const { openPopup } = useBasePopup()
+const { open } = usePopup()
 </script>
 
 <template>
@@ -37,42 +38,49 @@ const { openPopup } = useBasePopup()
       class="flex-col flex overflow-y-auto fixed inset-0 z-50 bg-black w-64 shadow-lg gap-6 p-4"
     >
       <button
-        @click="handleClose"
+        @click="handleCloseMenuClick"
         class="absolute top-4 right-4 text-yellow hover:text-interactive-hover text-2xl"
         aria-label="Close menu"
       >
         &times;
       </button>
+
       <nav class="mt-16 space-y-4">
         <ul class="space-y-4">
-          <template v-for="(item, index) in menuItems" :key="index">
-            <li v-if="!item.divider" class="flex items-center space-x-2 cursor-pointer">
-              <router-link
-                v-if="item.path"
-                :to="item.path"
-                @click="handleClose"
-                class="flex items-center space-x-2 p-2 rounded-lg transition-colors duration-200 ease-in-out hover:bg-gray-700"
-              >
-                <component
-                  :is="iconComponents[item.icon]"
-                  class="w-6 h-6 text-yellow hover:text-interactive-hover"
-                />
-                <span class="text-yellow hover:text-interactive-hover">{{ item.label }}</span>
-              </router-link>
-            </li>
-            <hr v-else class="border-gray my-2" />
-          </template>
+          <li
+            v-for="(item, index) in menuItems"
+            :key="index"
+            class="flex flex-col items-start space-x-2 cursor-pointer"
+          >
+            <router-link
+              :to="item.path"
+              @click="handleCloseMenuClick"
+              class="flex items-center space-x-2 p-2 rounded-lg transition-colors duration-200 ease-in-out hover:bg-gray-700"
+            >
+              <component
+                :is="iconComponents[item.icon]"
+                class="w-6 h-6 text-yellow hover:text-interactive-hover"
+              />
+
+              <span class="text-yellow hover:text-interactive-hover">
+                {{ item.label }}
+              </span>
+            </router-link>
+
+            <hr class="border-gray my-2 w-full" />
+          </li>
         </ul>
       </nav>
 
       <div class="mt-auto w-full">
         <div class="flex flex-col space-y-2">
           <BaseButton
-            @click="openPopup"
+            @click="open"
             theme="secondary"
             class="flex justify-center items-center px-4 py-2 space-x-2 rounded transition duration-300 ease-in-out"
           >
             <span class="font-bold text-white">Live Chat</span>
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="h-5 w-5"
@@ -89,7 +97,6 @@ const { openPopup } = useBasePopup()
             </svg>
           </BaseButton>
 
-          <!-- English Button -->
           <BaseButton theme="language">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -99,6 +106,7 @@ const { openPopup } = useBasePopup()
             >
               <path d="M4 2h2v20H4V2zm2 0h14l-3 5 3 5H6V2z" />
             </svg>
+
             <span class="font-bold text-yellow">English</span>
           </BaseButton>
         </div>
