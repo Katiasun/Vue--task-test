@@ -1,9 +1,19 @@
 <script setup>
 import { defineProps, defineEmits } from 'vue'
+
 import BaseLink from '@/components/base/BaseLink.vue'
 import BaseButton from '@/components/base/BaseButton.vue'
 
-import { useBasePopup } from '@/composables/useBasePopup'
+import { usePopup } from '@/composables/usePopup'
+
+const props = defineProps({
+  isMenuOpen: {
+    type: Boolean,
+    required: true,
+  },
+})
+
+const emit = defineEmits(['open-side-menu', 'open-dialog'])
 
 const navLinks = [
   { to: '/games', text: 'Games' },
@@ -12,26 +22,18 @@ const navLinks = [
   { to: '/live-casino', text: 'Live Casino' },
 ]
 
-const props = defineProps({
-  isMenuOpen: {
-    type: Boolean,
-    required: true,
-  },
-})
-const emit = defineEmits(['open-side-menu', 'open-dialog'])
-
-function handleButtonClick() {
+function handleMenuToggleClick() {
   emit('open-side-menu')
 }
 
-const { openPopup } = useBasePopup()
+const { open } = usePopup()
 </script>
 
 <template>
   <header class="bg-black py-4">
     <div class="container mx-auto flex items-center">
       <button
-        @click="handleButtonClick"
+        @click="handleMenuToggleClick"
         :aria-pressed="props.isMenuOpen ? 'true' : 'false'"
         class="group inline-flex w-12 h-12 text-yellow hover:text-interactive-hover text-center items-center justify-center rounded shadow-[0_1px_0_theme(colors.slate.950/.04),0_1px_2px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] hover:shadow-[0_1px_0_theme(colors.slate.950/.04),0_4px_8px_theme(colors.slate.950/.12),inset_0_-2px_0_theme(colors.slate.950/.04)] transition"
       >
@@ -66,16 +68,19 @@ const { openPopup } = useBasePopup()
       </button>
 
       <nav :class="['md:flex space-x-4 ml-4', isMenuOpen ? 'hidden md:block' : 'hidden md:block']">
-        <BaseLink v-for="link in navLinks" :key="link.to" :to="link.to">{{ link.text }}</BaseLink>
+        <BaseLink v-for="{ to, text } in navLinks" :key="to" :to="to">
+          {{ text }}
+        </BaseLink>
       </nav>
 
       <div class="flex-grow flex justify-center">
         <RouterLink to="/" class="cursor-pointer">
           <img
-            src="../../assets/paymentIcons/hashnode.svg"
+            src="@/assets/paymentIcons/hashnode.svg"
             alt="hashnode"
             class="h-10 w-auto sm:h-12 md:h-14 lg:h-16 object-contain bg-yellow rounded-full p-1"
-        /></RouterLink>
+          />
+        </RouterLink>
       </div>
 
       <div class="flex items-center">
@@ -95,18 +100,17 @@ const { openPopup } = useBasePopup()
             />
           </svg>
         </button>
+
         <CircleFlags country="gb" size="small" class="mr-2 cursor-pointer" />
 
-        <BaseButton @click="openPopup" theme="secondary" class="hidden md:block mr-2">
+        <BaseButton @click="open" theme="secondary" class="hidden md:block mr-2">
           Sign In
         </BaseButton>
 
-        <BaseButton @click="openPopup" theme="primary" class="hidden md:block mr-2">
+        <BaseButton @click="open" theme="primary" class="hidden md:block mr-2">
           Sign Up
         </BaseButton>
       </div>
     </div>
   </header>
 </template>
-
-<style scoped></style>
