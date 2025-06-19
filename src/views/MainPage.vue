@@ -73,14 +73,18 @@ const slides = ref([
     class="bg-gradient-to-br from-slate-950 via-slate-900 to-black font-primary py-16 px-5 relative min-h-screen"
   >
     <GamesSlider
-      :slides="slides"
+      nextBtnId="nex-1"
+      prevBtnId="prev-1"
+      :games="slides"
       @toggle-favorite="handleToggleFavorite"
       @see-all="goToGames"
       title="New Games"
     />
 
     <GamesSlider
-      :slides="slides"
+      nextBtnId="nex-2"
+      prevBtnId="prev-2"
+      :games="slides"
       @toggle-favorite="handleToggleFavorite"
       @see-all="goToGames"
       title="Trending Games"
