@@ -23,7 +23,7 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue'])
 
 // Computed property for v-model
-const internalValue = computed({
+const inputValue = computed({
   get: () => props.modelValue,
   set: (newValue) => {
     emit('update:modelValue', newValue)
@@ -31,12 +31,12 @@ const internalValue = computed({
 })
 
 // Computed property to control the visibility of the crosshair
-const showClearIcon = computed(() => {
+const isClearIconVisible = computed(() => {
   return !!props.modelValue && props.modelValue.toString().length > 0
 })
 
 // Function for clearing input
-const clearInput = () => {
+function handleClearInput() {
   emit('update:modelValue', '')
 }
 </script>
@@ -63,14 +63,14 @@ const clearInput = () => {
     <input
       :type="type"
       :placeholder="placeholder"
-      v-model="internalValue"
+      v-model="inputValue"
       class="w-full bg-black text-yellow placeholder-gray-500 border border-gray rounded-lg py-3 px-4 shadow-md focus:outline-none focus:ring-2 focus:ring-yellow focus:border-transparent transition duration-200 ease-in-out pl-10"
-      :class="{ 'pr-10': showClearIcon }"
+      :class="{ 'pr-10': isClearIconVisible }"
     />
 
     <button
-      v-if="showClearIcon"
-      @click="clearInput"
+      v-if="isClearIconVisible"
+      @click="handleClearInput"
       class="absolute right-3 top-1/2 -translate-y-1/2 text-gray cursor-pointer hover:text-yellow focus:outline-none focus:ring-2 focus:ring-blue-500 rounded-full p-0.5 z-10"
     >
       <svg

@@ -1,50 +1,16 @@
 <script setup>
-import { defineEmits, onMounted, onUnmounted } from 'vue'
-
 import BaseButton from './BaseButton.vue'
+
+import { usePopup } from '@/composables/usePopup'
 
 import { XMarkIcon } from '@heroicons/vue/24/outline'
 
-const emit = defineEmits(['close'])
-
-function closeDialog() {
-  const dialogElement = document.getElementById('favDialog')
-
-  if (dialogElement && dialogElement.open) {
-    dialogElement.close()
-    emit('close')
-  }
-}
-
-// 2. Додаємо обробник кліку на backdrop для закриття
-function handleBackdropClick(event) {
-  const dialogElement = document.getElementById('favDialog')
-
-  if (dialogElement && event.target === dialogElement) {
-    closeDialog()
-  }
-}
-
-onMounted(() => {
-  const dialogElement = document.getElementById('favDialog')
-
-  if (dialogElement) {
-    dialogElement.addEventListener('click', handleBackdropClick) // Додаємо слухача для кліків на backdrop
-  }
-})
-
-onUnmounted(() => {
-  const dialogElement = document.getElementById('favDialog')
-
-  if (dialogElement) {
-    dialogElement.removeEventListener('click', handleBackdropClick) // Видаляємо слухача при розмонтуванні
-  }
-})
+const { close } = usePopup()
 </script>
 
 <template>
   <dialog
-    id="favDialog"
+    id="popup"
     class="rounded-lg shadow-xl p-6 bg-slate-800 text-white border border-yellow-500 max-w-sm md:max-w-md lg:max-w-lg fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 backdrop:bg-black/70 backdrop:backdrop-blur-sm"
   >
     <div class="flex flex-col gap-4">
@@ -52,7 +18,7 @@ onUnmounted(() => {
         <p class="text-xl font-bold text-center">Greetings, one and all!</p>
 
         <button
-          @click="closeDialog"
+          @click="close"
           aria-label="Закрити модальне вікно"
           class="bg-gray hover:bg-slate-600 rounded-full text-white cursor-pointer z-10"
         >
