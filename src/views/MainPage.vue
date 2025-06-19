@@ -4,6 +4,14 @@ import { useRouter } from 'vue-router'
 
 import GamesSlider from '@/components/games/GamesSlider.vue'
 
+import main1 from '@/imgs/main1.jpg'
+import main2 from '@/imgs/main2.jpg'
+import main3 from '@/imgs/main3.jpg'
+import main4 from '@/imgs/main4.jpg'
+import main5 from '@/imgs/main5.jpg'
+import main6 from '@/imgs/main6.jpg'
+import main7 from '@/imgs/main7.jpg'
+
 const router = useRouter()
 
 const goToGames = () => {
@@ -23,43 +31,43 @@ function handleToggleFavorite(slideData) {
 
 const slides = ref([
   {
-    image: '/src/imgs/main1.jpg',
+    image: main1,
     title: 'Slide 1 Title', // Added title
     buttonText: 'Learn More',
     buttonTheme: 'primary',
   },
   {
-    image: '/src/imgs/main2.jpg',
+    image: main2,
     title: 'Slide 2 Title', // Added title
     buttonText: 'Discover',
     buttonTheme: 'primary',
   },
   {
-    image: '/src/imgs/main3.jpg',
+    image: main3,
     title: 'Slide 3 Title', // Added title
     buttonText: 'Get Started',
     buttonTheme: 'primary',
   },
   {
-    image: '/src/imgs/main4.jpg',
+    image: main4,
     title: 'Slide 4 Title', // Added title
     buttonText: 'Get Started',
     buttonTheme: 'primary',
   },
   {
-    image: '/src/imgs/main5.jpg',
+    image: main5,
     title: 'Slide 5 Title', // Added title
     buttonText: 'Get Started',
     buttonTheme: 'primary',
   },
   {
-    image: '/src/imgs/main6.jpg',
+    image: main6,
     title: 'Slide 6 Title', // Added title
     buttonText: 'Get Started',
     buttonTheme: 'primary',
   },
   {
-    image: '/src/imgs/main7.jpg',
+    image: main7,
     title: 'Slide 7 Title', // Added title
     buttonText: 'Get Started',
     buttonTheme: 'primary',
