@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import MainPage from '@/views/MainPage.vue'
-// import { name } from '@vue/eslint-config-prettier/skip-formatting'
 
 const routes = [
   {
