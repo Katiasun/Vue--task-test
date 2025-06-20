@@ -28,6 +28,11 @@ watch(
   },
 )
 
+// Допоміжна функція для елементів без path (якщо їм потрібен клік)
+function handleNonRoutableItemClick(item) {
+  alert(`Click on: ${item.label}. This item doesn't have a route path. `)
+}
+
 const { open } = usePopup()
 </script>
 
@@ -53,6 +58,7 @@ const { open } = usePopup()
             class="flex flex-col items-start space-x-2 cursor-pointer"
           >
             <router-link
+              v-if="item.path"
               :to="item.path"
               @click="handleCloseMenuClick"
               class="flex items-center space-x-2 p-2 rounded-lg transition-colors duration-200 ease-in-out hover:bg-gray-700"
@@ -66,6 +72,18 @@ const { open } = usePopup()
                 {{ item.label }}
               </span>
             </router-link>
+
+            <div
+              v-else
+              @click="handleNonRoutableItemClick"
+              class="flex items-center p-2 space-x-2 rounded-lg transition-colors duration-200 ease-in-out hover:bg-gray-700 w-full"
+            >
+              <component
+                :is="iconComponents[item.icon]"
+                class="w-6 h-6 text-yellow-500 hover:text-interactive-hover"
+              />
+              <span class="text-yellow hover:text-interactive-hover">{{ item.label }}</span>
+            </div>
 
             <hr class="border-gray my-2 w-full" />
           </li>
