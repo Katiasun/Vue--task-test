@@ -4,102 +4,110 @@ import { ref, computed } from 'vue'
 import BaseInput from '@/components/base/BaseInput.vue'
 import GameItem from '@/components/games/GamesItem.vue'
 
+import main1 from '@/imgs/main1.jpg'
+import main2 from '@/imgs/main2.jpg'
+import main3 from '@/imgs/main3.jpg'
+import main4 from '@/imgs/main4.jpg'
+import main5 from '@/imgs/main5.jpg'
+import main6 from '@/imgs/main6.jpg'
+import main7 from '@/imgs/main7.jpg'
+
 const searchText = ref('')
 
 const allGames = ref([
   {
-    image: '/src/imgs/main1.jpg',
+    image: main1,
     title: 'Jumbo Safari',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main2.jpg',
+    image: main2,
     title: 'Danny Dollar',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main3.jpg',
+    image: main3,
     title: 'Hot Chilli Bells',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main4.jpg',
+    image: main5,
     title: '5 Star Coins: Hold & Win',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main5.jpg',
+    image: main4,
     title: 'Lord Venom',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main6.jpg',
+    image: main6,
     title: 'Donny Dough',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main7.jpg',
+    image: main7,
     title: 'Ultra Fresh',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main1.jpg',
+    image: main1,
     title: '4 Fantastic Fish',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main3.jpg',
+    image: main5,
     title: 'Club Tropicana',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main4.jpg',
+    image: main3,
     title: 'Carnival Cat: Bonus Combo',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main2.jpg',
+    image: main2,
     title: 'Egypt Coin Link',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main7.jpg',
+    image: main7,
     title: 'Blast the Bass',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main2.jpg',
+    image: main6,
     title: 'Ultra Hot Deluxe',
     buttonText: 'Грати',
     buttonTheme: 'primary',
     isFavorite: false,
   },
   {
-    image: '/src/imgs/main5.jpg',
+    image: main1,
     title: 'Bigger Bass Splash',
     buttonText: 'Грати',
     buttonTheme: 'primary',
